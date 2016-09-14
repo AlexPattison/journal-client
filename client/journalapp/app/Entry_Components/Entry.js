@@ -29,7 +29,7 @@ export default class Entry extends Component {
     this.state = {
       likes: props.rating,
     };
-    
+
     var context = this;
     this.likePost = () => {
       AsyncStorage.getItem('@MySuperStore:token', (err, token) => {
@@ -39,9 +39,9 @@ export default class Entry extends Component {
             'content-type': 'application/json',
             'x-access-token': token,
           },
-          body: JSON.stringify({ 
+          body: JSON.stringify({
             user: props.user,
-            entryId: props.id, 
+            entryId: props.id,
           }),
         }).then(function (response) {
           context.setState({likes: context.state.likes + 1});
@@ -54,26 +54,30 @@ export default class Entry extends Component {
 
   render() {
     return (
-      <View style={ styles.container }>
-        <View style={ styles.row }>
-          <View style={ styles.rowHeader }>
-            <Text style={ styles.date }>
-              { parseDate(this.props.createdAt) }
-            </Text>
-            <Text style={ styles.location }>
-              { this.props.location }
-            </Text>
-          </View>
-          <View style={ styles.rowBody }>
-            <Text style={ styles.entryText }>
-              { this.props.text }     
-            </Text>
-            <Text style={ styles.rating } onPress={ this.likePost }>
-              Rating:{ this.state.likes }
-            </Text>
+      <TouchableHighlight onPress={()=>{ this.props.navigator.push({title: 'WhiteListScene'})}}>
+
+        <View style={ styles.container }>
+          <View style={ styles.row }>
+            <View style={ styles.rowHeader }>
+              <Text style={ styles.date }>
+                { parseDate(this.props.createdAt) }
+              </Text>
+              <Text style={ styles.location }>
+                { this.props.location }
+              </Text>
+            </View>
+            <View style={ styles.rowBody }>
+              <Text style={ styles.entryText }>
+                { this.props.text }
+              </Text>
+              <Text style={ styles.rating } onPress={ this.likePost }>
+                Rating:{ this.state.likes }
+              </Text>
+            </View>
           </View>
         </View>
-      </View>
+      </TouchableHighlight>
+
     )
   }
 }

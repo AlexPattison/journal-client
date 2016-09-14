@@ -15,8 +15,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import styles from '../styles/MessageSceneStyles';
 
-// Note that this is a scene, not a tab view. In this case, that means the user clicked on "What did you do today?" in 
-// EntriesTab.js. EntriesTab then tells Main.js to navigate to this scene. 
+// Note that this is a scene, not a tab view. In this case, that means the user clicked on "What did you do today?" in
+// EntriesTab.js. EntriesTab then tells Main.js to navigate to this scene.
 export default class FriendScene extends Component {
   constructor(props) {
     super(props);
@@ -31,17 +31,17 @@ export default class FriendScene extends Component {
   }
 
   // This shrinks the container to accommodate the keypad, when the user clicks the text input
-  // to begin his/her entry. The footer is thus effectively pulled up the view. 
+  // to begin his/her entry. The footer is thus effectively pulled up the view.
   moveUpForKeyboardShow(){
     setTimeout( ()=> {
       this.setState(
         { dynamicHeight : () => { return { height: Dimensions.get('window').height * .45 }} }
       );
-    }, 200); 
+    }, 200);
   }
 
   // When the user clicks out of the text input but remains on this view, this resets the container
-  // back to its original size, effectively pushing the footer back down. 
+  // back to its original size, effectively pushing the footer back down.
   moveDownForKeyboardHide(){
     this.setState(
       { dynamicHeight : () => { return {height: Dimensions.get('window').height - 49 - 70}} }
@@ -53,7 +53,7 @@ export default class FriendScene extends Component {
       <ScrollView style={ styles.container } ref='scrollView'>
         <TextInput
             keyboardType='default'
-            keyboardAppearance='light' 
+            keyboardAppearance='light'
             multiline={ true }
             placeholder= 'What did you do today?'
             style={ [this.state.dynamicHeight(), styles.bodyWidth, styles.fadedText] }
@@ -66,6 +66,7 @@ export default class FriendScene extends Component {
           <Icon style={ [styles.footerContent, styles.footerArrow] } name="near-me"/>
           <Text style={ [styles.footerContent, styles.footerText] }>{ this.props.location }</Text>
         </View>
+        {/* <Text>MessageSceneView</Text> */}
       </ScrollView>
     )
   }
