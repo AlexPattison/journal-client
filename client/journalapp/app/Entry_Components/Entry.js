@@ -30,8 +30,9 @@ export default class Entry extends Component {
     this.props = props;
 
     var entryContext = this;
+
     this.likePost = () => {
-      
+
       var token;
       var user;
       var queryServer = () => {
@@ -41,9 +42,9 @@ export default class Entry extends Component {
             'content-type': 'application/json',
             'x-access-token': token,
           },
-          body: JSON.stringify({ 
+          body: JSON.stringify({
             user: user,
-            entryId: props.id, 
+            entryId: props.id,
           }),
         }).then(function (response) {
           var votesArray = entryContext.props.votes;
@@ -80,31 +81,35 @@ export default class Entry extends Component {
 
   render() {
     return (
-      <View style={ styles.container }>
-        <View style={ styles.row }>
-          <View style={ styles.rowHeader }>
-            <Text style={ styles.date }>
-              { parseDate(this.props.createdAt) }
-            </Text>
-            <Text style={ styles.location }>
-              { this.props.location }
-            </Text>
-          </View>
-          <View style={ styles.rowBody }>
-            <Text style={ styles.entryText }>
-              { this.props.text }     
-            </Text>
-            <TouchableHighlight style={ styles.ratingContainer } onPress={ this.likePost }>
-              <View style={ styles.ratingContainer }>
-                <Text style={ styles.rating }>
-                  { this.props.votes.length }
-                </Text>
-                <Image style={ styles.image } source={ require('../images/empty_heart.png') }></Image>
-              </View>
-            </TouchableHighlight>
+<<<<<<< 5a75bc44d5b4d2797dc50546e87731eb94bba60f
+      <TouchableHighlight onPress={()=>{ this.props.navigator.push({title: 'WhiteListScene'})}}>
+        <View style={ styles.container }>
+          <View style={ styles.row }>
+            <View style={ styles.rowHeader }>
+              <Text style={ styles.date }>
+                { parseDate(this.props.createdAt) }
+              </Text>
+              <Text style={ styles.location }>
+                { this.props.location }
+              </Text>
+            </View>
+            <View style={ styles.rowBody }>
+              <Text style={ styles.entryText }>
+                { this.props.text }
+              </Text>
+              <TouchableHighlight style={ styles.ratingContainer } onPress={ this.likePost }>
+                <View style={ styles.ratingContainer }>
+                  <Text style={ styles.rating }>
+                    { this.props.votes.length }
+                  </Text>
+                  <Image style={ styles.image } source={ require('../images/empty_heart.png') }></Image>
+                </View>
+              </TouchableHighlight>
+            </View>
           </View>
         </View>
-      </View>
+      </TouchableHighlight>
+
     );
   }
 }
