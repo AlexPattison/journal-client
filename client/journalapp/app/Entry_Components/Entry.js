@@ -9,7 +9,7 @@ import {
   View,
   Dimensions,
   AsyncStorage,
-  TouchableHighlight
+  TouchableHighlight,
 } from 'react-native';
 
 import styles from '../styles/EntryStyles';
