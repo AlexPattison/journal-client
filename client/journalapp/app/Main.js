@@ -227,6 +227,7 @@ export default class Main extends Component {
       return (
         <ChangePassword
           navigator={ navigator } />
+      )
     } else if (route.title === 'WhiteListScene') {
       return (
         <WhiteListScene
