@@ -44,11 +44,19 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color:"#424242",
   },
+<<<<<<< b3f741619a67c8aa268b087a5644ab42032ab860
   rating: {
     justifyContent: 'flex-end',
     fontSize: 12,
     fontWeight: '500',
     color:"#404040",
+=======
+  arrow: {
+    alignSelf:'flex-end',
+    flexDirection: 'column',
+    fontSize:24,
+    color:"#c7c7cc",
+>>>>>>> Add right arrow icon to entry component
   }
 });
 
