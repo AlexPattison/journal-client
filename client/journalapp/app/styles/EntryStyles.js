@@ -39,6 +39,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   entryText: {
+    flexDirection: 'column',
+    position: 'relative',
     justifyContent: 'flex-start',
     fontSize: 15,
     fontWeight: '500',

@@ -13,6 +13,7 @@ import Swipeout from 'react-native-swipeout';
 import Entry from './Entry';
 import styles from '../styles/EntryListStyles';
 
+<<<<<<< e994a9b6e49128058d4c281aee91074357832074
 var EntryList = ({entries, rerender, userEntries}) => (
     <ListView 
       dataSource={entries} 
@@ -47,7 +48,20 @@ var EntryList = ({entries, rerender, userEntries}) => (
           </Swipeout>
         ) : (<Entry id={ rowData.id } votes={ rowData.votes } text={ rowData.text } createdAt={ rowData.createdAt } location={ rowData.location }/>)
       }}/>
+=======
+var EntryList = ({entries}) => (
+    <ListView style ={styles.container}
+       dataSource={entries}
+       renderRow={ (rowData) =>
+<<<<<<< 2f6d2db77393e5256f6322003225abc6f303d0fa
+          <Entry id={ rowData.id } rating={ rowData.rating } text={ rowData.text } createdAt={ rowData.createdAt } location={ rowData.location }/>
+=======
+          <Entry text={ rowData.text }
+            createdAt={ rowData.createdAt }
+            location={ rowData.location }/>
+>>>>>>> Add to entry components
+        }/>
+>>>>>>> More merge conflict fixes
 )
 
 module.exports = EntryList;
-

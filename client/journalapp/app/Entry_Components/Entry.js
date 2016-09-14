@@ -97,6 +97,7 @@ export default class Entry extends Component {
               <Text style={ styles.entryText }>
                 { this.props.text }
               </Text>
+<<<<<<< e994a9b6e49128058d4c281aee91074357832074
               <TouchableHighlight style={ styles.ratingContainer } onPress={ this.likePost }>
                 <View style={ styles.ratingContainer }>
                   <Text style={ styles.rating }>
@@ -105,6 +106,13 @@ export default class Entry extends Component {
                   <Image style={ styles.image } source={ require('../images/empty_heart.png') }></Image>
                 </View>
               </TouchableHighlight>
+=======
+              <Icon style={styles.arrow} name="navigate-next" ></Icon>
+
+              <Text style={ styles.rating } onPress={ this.likePost }>
+                Rating:{ this.state.likes }
+              </Text>
+>>>>>>> More merge conflict fixes
             </View>
           </View>
         </View>
