@@ -8,45 +8,13 @@ import {
   ListView,
   View,
   Dimensions,
-<<<<<<< b3f741619a67c8aa268b087a5644ab42032ab860
   AsyncStorage,
-=======
   TouchableHighlight
->>>>>>> Add right arrow icon to entry component
 } from 'react-native';
 
 import styles from '../styles/EntryStyles';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-<<<<<<< b3f741619a67c8aa268b087a5644ab42032ab860
-=======
-var Entry = (props) => (
-  <TouchableHighlight onPress={()=>{ props.navigator.push({title: 'WhiteListScene'})}}>
-    <View style={ styles.container }>
-      <View style={ styles.row }>
-        <View style={ styles.rowHeader }>
-          <Text style={ styles.date }>
-            { parseDate(props.createdAt) }
-          </Text>
-          <Text style={ styles.location }>
-            { props.location }
-          </Text>
-        </View>
-        <View style={ styles.rowBody }>
-          <Text style={ styles.entryText }>
-            { props.text }
-          </Text>
-
-          <Icon style= {styles.arrow} name="navigate-next" ></Icon>
-        </View>
-      </View>
-    </View>
-  </TouchableHighlight>
-);
-
-module.exports = Entry;
-
->>>>>>> Add right arrow icon to entry component
 var parseDate = (date) => {
   if (date) {
     date = new Date(date);
