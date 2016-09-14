@@ -72,6 +72,8 @@ export default class Entry extends Component {
               <Text style={ styles.entryText }>
                 { this.props.text }
               </Text>
+              <Icon style={styles.arrow} name="navigate-next" ></Icon>
+
               <Text style={ styles.rating } onPress={ this.likePost }>
                 Rating:{ this.state.likes }
               </Text>
