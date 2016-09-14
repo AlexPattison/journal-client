@@ -67,6 +67,12 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginLeft: 2,
   },
+  arrow: {
+    alignSelf:'flex-end',
+    flexDirection: 'column',
+    fontSize:24,
+    color:"#c7c7cc",
+  }
 });
 
 module.exports = styles;

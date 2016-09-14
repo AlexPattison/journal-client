@@ -10,10 +10,11 @@ import {
   Dimensions,
   AsyncStorage,
   Image,
-  TouchableHighlight,
+  TouchableHighlight
 } from 'react-native';
 
 import styles from '../styles/EntryStyles';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 var parseDate = (date) => {
   if (date) {
@@ -81,7 +82,6 @@ export default class Entry extends Component {
 
   render() {
     return (
-<<<<<<< 5a75bc44d5b4d2797dc50546e87731eb94bba60f
       <TouchableHighlight onPress={()=>{ this.props.navigator.push({title: 'WhiteListScene'})}}>
         <View style={ styles.container }>
           <View style={ styles.row }>
