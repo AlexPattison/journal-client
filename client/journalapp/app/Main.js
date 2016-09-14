@@ -20,11 +20,8 @@ import SettingsTab from './Settings_Components/SettingsTab';
 import FriendScene from './Friend_Components/FriendScene';
 import MessageScene from './Entry_Components/MessageScene';
 import SearchFriends from './Friend_Components/SearchFriends';
-<<<<<<< 2f6d2db77393e5256f6322003225abc6f303d0fa
 import ChangePassword from './Settings_Components/ChangePasswordScene';
-=======
 import WhiteListScene from './Entry_Components/WhiteListScene.js';
->>>>>>> Add to entry components
 
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
