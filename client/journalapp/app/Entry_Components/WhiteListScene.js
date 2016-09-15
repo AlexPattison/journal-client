@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { AppRegistry, Text } from 'react-native';
 
+import SearchFriends from '../Friend_Components/SearchFriends';
+
+
 export default class WhiteListScene extends Component {
   constructor(props) {
     super(props);
@@ -9,7 +12,9 @@ export default class WhiteListScene extends Component {
 
   render() {
     return (
-      <Text></Text>
+      <SearchFriends
+        navigator={ navigator }
+        placeholder={ 'Who can read this?' }/>
     );
   }
 }
