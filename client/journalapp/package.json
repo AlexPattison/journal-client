@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "rebase": "git pull upstream master --rebase && git push origin master",
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "postinstall": "rndebugger-open"
   },
   "dependencies": {
     "dateformat": "^1.0.12",
     "react": "15.3.1",
+    "react-dom": "^15.3.1",
     "react-icons": "^2.2.1",
     "react-native": "0.32.0",
     "react-native-button": "^1.7.0",
@@ -16,5 +18,8 @@
     "react-native-geocoder": "^0.4.5",
     "react-native-tabs": "^1.0.9",
     "react-native-vector-icons": "^2.1.0"
+  },
+  "devDependencies": {
+    "react-native-debugger-open": "^0.3.1"
   }
 }

@@ -56,7 +56,7 @@ export default class Entry extends Component {
 
   render() {
     return (
-      <TouchableHighlight onPress={()=>{ this.props.navigator.push({title: 'WhiteListScene'})}}>
+      <TouchableHighlight onPress={ () => this.props.navigator.push({title: 'WhiteListScene'}) }>
 
         <View style={ styles.container }>
           <View style={ styles.row }>
