@@ -219,7 +219,8 @@ export default class Main extends Component {
     } else if (route.title === 'SearchFriends') {
       return (
         <SearchFriends
-          navigator={ navigator } />
+          navigator={ navigator }
+          placeholder={ 'Search for your friend by username' }/>
       )
     } else if (route.title === 'PasswordScene') {
       return (

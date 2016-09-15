@@ -53,7 +53,7 @@ export default class SearchFriends extends Component {
     });
   };
 
-  // Sending the friend request occurs when the user clicks the friend icon in the SearchResultRow view. 
+  // Sending the friend request occurs when the user clicks the friend icon in the SearchResultRow view.
   sendFriendReq(id, navigator) {
      AsyncStorage.getItem('@MySuperStore:token', (err, token) => {
        var message = {requestReceiver:id};
@@ -66,7 +66,7 @@ export default class SearchFriends extends Component {
          body: JSON.stringify(message)
        })
          .then((response) => {
-            // Uncomment this pop if you want the screen to pan back to the friends list after a request is sent. 
+            // Uncomment this pop if you want the screen to pan back to the friends list after a request is sent.
             // Set a timer around it to make the transition delayed.
             //navigator.pop();
          })
@@ -82,10 +82,10 @@ export default class SearchFriends extends Component {
       <View style={styles.container}>
         <TextInput
           style={styles.textinput}
-          placeholder= 'Search for your friend by username'
+          placeholder= {this.props.placeholder}
           onChangeText={(text) => this.findMatching(text)} />
-        <SearchResultsList 
-          results={this.state.results} 
+        <SearchResultsList
+          results={this.state.results}
           sendreq={this.sendFriendReq.bind(this)}
           navigator={this.props.navigator}/>
       </View>
