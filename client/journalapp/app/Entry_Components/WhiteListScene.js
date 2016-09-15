@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { AppRegistry, Text, View } from 'react-native';
 import CheckBox from 'react-native-checkbox';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import SearchFriends from '../Friend_Components/SearchFriends';
 
@@ -10,7 +11,8 @@ export default class WhiteListScene extends Component {
     this.props = props;
     this.state = {
       all: true,
-      none: false
+      none: false,
+      specific: ['Jim', 'Dwight']
     }
   }
 
@@ -27,20 +29,25 @@ export default class WhiteListScene extends Component {
           {'\n'}
           {'\n'}
         </Text>
-        <View style={{ paddingLeft: 10 }}>
+        <View style={{ paddingLeft: 6, paddingTop: 10 }}>
           <CheckBox
-          label='All'
-          checked={this.state.all}
-          onChange={ () => this.setState({all: !this.state.all, none: !this.state.none }) }
+            checkboxStyle={{width: 18, height: 18}}
+            label='All'
+            checked={this.state.all}
+            onChange={ () => this.setState({all: !this.state.all, none: !this.state.none }) }
           />
         </View>
-        <View style={{ paddingLeft: 10 }}>
+        <View style={{ paddingLeft: 6 }}>
           <CheckBox
-          label='None (This entry is private)'
-          checked={this.state.none}
-          onChange={ () => this.setState({none: !this.state.none, all: !this.state.all }) }
+            checkboxStyle={{width: 18, height: 18}}
+            label='None (This entry is private)'
+            checked={this.state.none}
+            onChange={ () => this.setState({none: !this.state.none, all: !this.state.all }) }
           />
         </View>
+        <Text>
+          { this.state.specific }
+        </Text>
         <SearchFriends
           navigator={ navigator }
           placeholder={ 'Who can read this?' }/>
