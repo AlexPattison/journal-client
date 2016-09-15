@@ -12,20 +12,20 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import styles from '../styles/SearchResultRowStyles';
 
-export default class SearchResultRow extends Component { 
+export default class SearchResultRow extends Component {
 
   constructor(props){
     super(props);
     this.props = props;
     this.state = {
-      dynamicFriendIcon: () => { return 'person-add'}, 
+      dynamicFriendIcon: () => { return 'person-add'},
       dynamicIconStyle: () => { return styles.defaultIcon }
     }
   }
 
   updateIcon(){
     this.setState({
-      dynamicFriendIcon: () => { return 'check-circle'}, 
+      dynamicFriendIcon: () => { return 'check-circle'},
       dynamicIconStyle: () => { return styles.greenIcon }
     })
   }
@@ -57,4 +57,3 @@ export default class SearchResultRow extends Component {
 };
 
 module.exports = SearchResultRow;
-
